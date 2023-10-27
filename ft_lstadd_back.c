@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 17:17:38 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2023/10/27 05:40:25 by tpaim-yu         ###   ########.fr       */
+/*   Created: 2023/10/27 10:50:03 by tpaim-yu          #+#    #+#             */
+/*   Updated: 2023/10/27 13:35:50 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	i;
-
-	i = 0;
-	if (n == i)
-		return (i);
-	if (n < i)
-	{
-		while (s1[i] == s2[i])
-			i++;
-	}
-	else
-	{
-		while ((i < (n - 1)) && (s1[i] == s2[i]) && s1[i])
-			i++;
-	}
-	return ((int)((unsigned char)s1[i] - (unsigned char)s2[i]));
+	*lst = ft_lstlast(lst);
+	// lst->next = new;
 }

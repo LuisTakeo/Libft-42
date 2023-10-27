@@ -6,7 +6,7 @@
 #    By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 18:38:35 by tpaim-yu          #+#    #+#              #
-#    Updated: 2023/10/26 18:42:59 by tpaim-yu         ###   ########.fr        #
+#    Updated: 2023/10/27 10:56:32 by tpaim-yu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,10 @@ SRC = ft_isdigit.c \
 				 ft_split.c
 
 SRC_BONUS = ft_lstnew.c \
-				 ft_lstadd_front.c
+				 ft_lstadd_front.c \
+				 ft_lstsize.c \
+				 ft_lstlast.c \
+				 ft_lstadd_back.c
 
 OBJ = ${SRC:%.c=%.o}
 
