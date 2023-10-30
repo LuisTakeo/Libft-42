@@ -6,7 +6,7 @@
 #    By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 18:38:35 by tpaim-yu          #+#    #+#              #
-#    Updated: 2023/10/27 10:56:32 by tpaim-yu         ###   ########.fr        #
+#    Updated: 2023/10/30 17:09:41 by tpaim-yu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,11 +49,16 @@ SRC = ft_isdigit.c \
 				 ft_itoa.c \
 				 ft_split.c
 
-SRC_BONUS = ft_lstnew.c \
-				 ft_lstadd_front.c \
-				 ft_lstsize.c \
-				 ft_lstlast.c \
-				 ft_lstadd_back.c
+SRC_BONUS = ft_lstnew_bonus.c \
+				 ft_lstadd_front_bonus.c \
+				 ft_lstsize_bonus.c \
+				 ft_lstlast_bonus.c \
+				 ft_lstadd_back_bonus.c \
+				 ft_lstdelone_bonus.c \
+				 ft_lstclear_bonus.c \
+				 ft_lstiter_bonus.c \
+				 ft_lstmap_bonus.c
+
 
 OBJ = ${SRC:%.c=%.o}
 

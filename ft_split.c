@@ -6,7 +6,7 @@
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:57:59 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2023/10/26 18:23:10 by tpaim-yu         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:49:51 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,7 @@ static int	ft_count_words(char const *s, char c)
 static void	*ft_free_arr(char **arr_str, int i)
 {
 	while (i > 0)
-	{
-		i--;
-		free(arr_str[i]);
-	}
+		free(arr_str[--i]);
 	free(arr_str);
 	return (NULL);
 }
@@ -89,6 +86,5 @@ char	**ft_split(char const *s, char c)
 		free(arr_str);
 		return (arr_str);
 	}
-	ft_alloc_words(s, arr_str, c, count_words);
-	return (arr_str);
+	return (ft_alloc_words(s, arr_str, c, count_words));
 }
