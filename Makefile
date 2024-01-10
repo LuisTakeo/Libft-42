@@ -6,7 +6,7 @@
 #    By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 18:38:35 by tpaim-yu          #+#    #+#              #
-#    Updated: 2024/01/10 19:27:01 by tpaim-yu         ###   ########.fr        #
+#    Updated: 2024/01/10 19:29:33 by tpaim-yu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,8 +59,8 @@ SRC_BONUS = ft_lstnew_bonus.c \
 				 ft_lstiter_bonus.c \
 				 ft_lstmap_bonus.c
 
-SRC_NEW_FUN = get_next_line.c \
-				 get_next_line_utils.c
+SRC_NEW_FUN = gnl/get_next_line.c \
+				 gnl/get_next_line_utils.c
 
 OBJ = ${SRC:%.c=%.o}
 OBJ_BONUS = ${SRC_BONUS:%.c=%.o}
