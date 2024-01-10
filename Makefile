@@ -6,7 +6,7 @@
 #    By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 18:38:35 by tpaim-yu          #+#    #+#              #
-#    Updated: 2023/10/30 17:09:41 by tpaim-yu         ###   ########.fr        #
+#    Updated: 2024/01/10 19:27:01 by tpaim-yu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,27 +59,39 @@ SRC_BONUS = ft_lstnew_bonus.c \
 				 ft_lstiter_bonus.c \
 				 ft_lstmap_bonus.c
 
+SRC_NEW_FUN = get_next_line.c \
+				 get_next_line_utils.c
 
 OBJ = ${SRC:%.c=%.o}
-
 OBJ_BONUS = ${SRC_BONUS:%.c=%.o}
+OBJ_NEW_FUN = ${SRC_NEW_FUN:%.c=%.o}
 
 ${NAME}: ${OBJ}
 
 all: ${NAME}
+	@echo "Arquivos da Libft compilados com sucesso!"
 
 bonus: ${OBJ_BONUS}
+	@echo "Arquivos bonus compilados com sucesso!"
+
+new_fun: ${OBJ_NEW_FUN}
+	@echo "Funções adicionais adicionadas com sucesso!"
 
 clean:
-	rm -f ${OBJ} ${OBJ_BONUS}
+	@echo "Limpando objetos da Libft..."
+	@rm -f ${OBJ} ${OBJ_BONUS} ${OBJ_NEW_FUN}
+	@echo "Feito!"
 
 fclean: clean
-	rm -f ${NAME}
+	@echo "Removendo $(NAME)..."
+	@rm -f ${NAME}
+	@echo "Feito!"
 
 re: fclean all
 
 %.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@ -I $(HEADER)
-	ar rcs ${NAME} $@
+	@echo "Compilando $(notdir $<) ..."
+	@$(CC) $(FLAGS) -c $< -o $@ -I $(HEADER)
+	@ar rcs ${NAME} $@
 
 .PHONY: bonus all clean fclean re
