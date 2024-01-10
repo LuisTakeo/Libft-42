@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putunsnbr_fd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 14:40:32 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2024/01/10 19:39:51 by tpaim-yu         ###   ########.fr       */
+/*   Created: 2023/12/03 16:23:15 by tpaim-yu          #+#    #+#             */
+/*   Updated: 2023/12/05 14:07:00 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./includes/ft_printf.h"
 
-int	ft_putchar_fd(char c, int fd)
+int	ft_putunsnbr_fd(unsigned int n, int fd)
 {
-	return (write(fd, &c, 1));
+	int	len;
+
+	len = 0;
+	if (n >= 10)
+		len += ft_putunsnbr_fd(n / 10, fd);
+	len += ft_putchar_fd((n % 10) + '0', fd);
+	return (len);
 }

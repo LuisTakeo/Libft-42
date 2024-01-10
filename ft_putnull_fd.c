@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnull_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 14:40:32 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2024/01/10 19:39:51 by tpaim-yu         ###   ########.fr       */
+/*   Created: 2023/12/03 18:56:46 by tpaim-yu          #+#    #+#             */
+/*   Updated: 2023/12/03 19:43:53 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_fd(char c, int fd)
+int	ft_putnull_fd(char *str, int fd)
 {
-	return (write(fd, &c, 1));
+	return (ft_putstr_fd(str, fd));
 }

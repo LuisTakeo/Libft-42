@@ -6,11 +6,11 @@
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 03:32:43 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2024/01/10 18:44:39 by tpaim-yu         ###   ########.fr       */
+/*   Updated: 2024/01/10 19:34:26 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "./includes/get_next_line.h"
 
 static ssize_t	count_line_len(t_list *t_char, char n)
 {

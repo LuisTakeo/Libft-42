@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putpointer_fd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 14:46:19 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2024/01/10 19:51:20 by tpaim-yu         ###   ########.fr       */
+/*   Created: 2023/12/03 16:24:32 by tpaim-yu          #+#    #+#             */
+/*   Updated: 2023/12/05 15:45:34 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./includes/ft_printf.h"
 
-int	ft_putstr_fd(const char *str, int fd)
+int	ft_putpointer_fd(unsigned long int n, char *start, int c, int fd)
 {
-	int	i;
-	int	len;
+	int				len;
+	unsigned long	base_nbr;
 
+	if (n == 0)
+		return (ft_putnull_fd("(nil)", fd));
+	base_nbr = ft_strlen(HEX);
 	len = 0;
-	if (!str)
-		return (ft_putnull_fd("(null)", fd));
-	i = -1;
-	while (str[++i])
-		len += ft_putchar_fd(str[i], fd);
+	if (c)
+		len += ft_putchar_fd(c, fd);
+	if (start)
+		len += ft_putstr_fd(start, fd);
+	if (n >= base_nbr)
+		len += ft_putpointer_fd(n / base_nbr, NULL, 0, fd);
+	len += ft_putchar_fd(HEX[n % base_nbr], fd);
 	return (len);
 }
-

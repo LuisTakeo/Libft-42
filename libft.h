@@ -6,7 +6,7 @@
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:09:08 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2024/01/10 18:44:28 by tpaim-yu         ###   ########.fr       */
+/*   Updated: 2024/01/10 19:54:10 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *str, int fd);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(const char *str, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+int		ft_putnbr_fd(int n, int c, int fd);
+int		ft_putnull_fd(char *str, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 t_list	*ft_lstnew(void *content);

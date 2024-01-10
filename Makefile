@@ -6,7 +6,7 @@
 #    By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 18:38:35 by tpaim-yu          #+#    #+#              #
-#    Updated: 2024/01/10 19:29:33 by tpaim-yu         ###   ########.fr        #
+#    Updated: 2024/01/10 19:56:07 by tpaim-yu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRC = ft_isdigit.c \
 				 ft_strjoin.c \
 				 ft_strtrim.c \
 				 ft_itoa.c \
-				 ft_split.c
+				 ft_split.c \
+				 ft_putnull_fd.c
 
 SRC_BONUS = ft_lstnew_bonus.c \
 				 ft_lstadd_front_bonus.c \
@@ -60,7 +61,13 @@ SRC_BONUS = ft_lstnew_bonus.c \
 				 ft_lstmap_bonus.c
 
 SRC_NEW_FUN = gnl/get_next_line.c \
-				 gnl/get_next_line_utils.c
+				 gnl/get_next_line_utils.c \
+				 ft_printf/ft_printf.c \
+				 ft_printf/ft_init_flags.c \
+				 ft_printf/ft_putnbrbase_fd.c \
+				 ft_printf/ft_putpointer_fd.c \
+				 ft_printf/ft_putstrspc_fd.c \
+				 ft_printf/ft_putunsnbr_fd.c
 
 OBJ = ${SRC:%.c=%.o}
 OBJ_BONUS = ${SRC_BONUS:%.c=%.o}
@@ -79,7 +86,9 @@ new_fun: ${OBJ_NEW_FUN}
 
 clean:
 	@echo "Limpando objetos da Libft..."
-	@rm -f ${OBJ} ${OBJ_BONUS} ${OBJ_NEW_FUN}
+	@rm -f ${OBJ} ${OBJ_BONUS}
+	@echo "Limpando objetos da GNL/ft_printf..."
+	@rm -f ${OBJ_NEW_FUN}
 	@echo "Feito!"
 
 fclean: clean

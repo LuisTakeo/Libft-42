@@ -6,11 +6,11 @@
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 03:38:53 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2024/01/10 18:45:07 by tpaim-yu         ###   ########.fr       */
+/*   Updated: 2024/01/10 19:34:14 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "./includes/get_next_line.h"
 
 t_list	*ft_lstnew(char content)
 {
