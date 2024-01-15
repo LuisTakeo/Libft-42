@@ -44,15 +44,15 @@ Primeiro projeto realizado na minha formação de Engenharia de Software na 42, 
 
 ### Bonus:
 
-- ft_lstnew_bonus
-- ft_lstadd_front_bonus
-- ft_lstsize_bonus
-- ft_lstlast_bonus.
-- ft_lstadd_back_bonus
-- ft_lstdelone_bonus
-- ft_lstclear_bonus
-- ft_lstiter_bonus
-- ft_lstmap_bonus
+- ft_lstnew_bonus -> Cria um novo nó com o conteúdo recebido.
+- ft_lstadd_front_bonus -> Adiciona um nó no começo da lista.
+- ft_lstsize_bonus -> Verifica e retorna a quantidade de nós da lista.
+- ft_lstlast_bonus -> Retorna com o nó do final da lista.
+- ft_lstadd_back_bonus -> Adiciona um nó no final da lista.
+- ft_lstdelone_bonus -> Remove o nó e seu conteúdo.
+- ft_lstclear_bonus -> Limpa uma lista e todos seus nós.
+- ft_lstiter_bonus -> Itera e executa uma função para cada conteúdo do nó.
+- ft_lstmap_bonus -> Mapeia a lista e seus conteúdos, retornando novos conteúdos em uma nova lista de mesmo tamanho.
 
 ### Adicionais
 - get_next_line -> Recebe um File Descriptor e retorna com a próxima linha lida.
