@@ -43,7 +43,6 @@ Primeiro projeto realizado na minha formação de Engenharia de Software na 42, 
 - ft_putnull_fd -> Imprime na tela o valor NULL.
 
 ### Bonus:
-
 - ft_lstnew_bonus -> Cria um novo nó com o conteúdo recebido.
 - ft_lstadd_front_bonus -> Adiciona um nó no começo da lista.
 - ft_lstsize_bonus -> Verifica e retorna a quantidade de nós da lista.
@@ -54,7 +53,7 @@ Primeiro projeto realizado na minha formação de Engenharia de Software na 42, 
 - ft_lstiter_bonus -> Itera e executa uma função para cada conteúdo do nó.
 - ft_lstmap_bonus -> Mapeia a lista e seus conteúdos, retornando novos conteúdos em uma nova lista de mesmo tamanho.
 
-### Adicionais
+### Adicionais:
 - get_next_line -> Recebe um File Descriptor e retorna com a próxima linha lida.
 - ft_printf -> Imprime um texto e seus argumentos com base na formatação da string ('%'). Versão 'mini' da printf original, sendo englobado os formatos "cspdiuxX%" e as flags '#', '+' e ' ' (space). 
 - ft_putnbrbase_fd -> Imprime um valor numérico em uma base numeral.
