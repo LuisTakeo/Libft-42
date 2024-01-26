@@ -6,7 +6,7 @@
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 03:33:30 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2024/01/10 19:26:31 by tpaim-yu         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:16:35 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@
 # include <unistd.h>
 
 
-typedef struct s_list
+typedef struct s_list_c
 {
 	char			c;
-	struct s_list	*next;
-}	t_list;
+	struct s_list_c	*next;
+}	t_list_char;
 
-char	*get_next_line(int fd);
-t_list	*ft_lstnew(char c);
-void	*ft_calloc(size_t nmemb, size_t size);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstclear(t_list **lst, void (*del)(void *));
+char		*get_next_line(int fd);
+void		*ft_calloc(size_t nmemb, size_t size);
+t_list_char	*ft_lstnew_char(char c);
+void		ft_lstadd_back_char(t_list_char **lst, t_list_char *new);
+void		ft_lstclear_char(t_list_char **lst, void (*del)(void *));
 
 #endif

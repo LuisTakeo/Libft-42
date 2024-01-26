@@ -6,16 +6,16 @@
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 03:32:43 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2024/01/10 19:34:26 by tpaim-yu         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:15:51 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/get_next_line.h"
 
-static ssize_t	count_line_len(t_list *t_char, char n)
+static ssize_t	count_line_len(t_list_char *t_char, char n)
 {
 	ssize_t		len;
-	t_list		*t_temp;
+	t_list_char	*t_temp;
 
 	len = 0;
 	t_temp = t_char;
@@ -40,12 +40,12 @@ static ssize_t	count_line_len(t_list *t_char, char n)
 	return (len);
 }
 
-static char	*create_new_line(t_list **t_char_node)
+static char	*create_new_line(t_list_char **t_char_node)
 {
-	ssize_t	i;
-	t_list	*t_new_node;
-	char	*new_line;
-	ssize_t	len;
+	ssize_t		i;
+	t_list_char	*t_new_node;
+	char		*new_line;
+	ssize_t		len;
 
 	t_new_node = *t_char_node;
 	i = 0;
@@ -69,7 +69,7 @@ static char	*create_new_line(t_list **t_char_node)
 	return (new_line);
 }
 
-static void	create_new_node(int fd, char *buff, ssize_t rd, t_list	**t_char)
+static void	create_new_node(int fd, char *buf, ssize_t rd, t_list_char	**t_ch)
 {
 	ssize_t	occ_break_line;
 	ssize_t	i;
@@ -78,32 +78,32 @@ static void	create_new_node(int fd, char *buff, ssize_t rd, t_list	**t_char)
 	while (rd > 0)
 	{
 		i = 0;
-		while (buff[i])
+		while (buf[i])
 		{
-			if (buff[i] == '\n')
+			if (buf[i] == '\n')
 				occ_break_line = 1;
-			ft_lstadd_back(&*t_char, ft_lstnew(buff[i++]));
+			ft_lstadd_back_char(&*t_ch, ft_lstnew_char(buf[i++]));
 		}
 		if (occ_break_line)
 			break ;
-		rd = read(fd, buff, BUFFER_SIZE);
+		rd = read(fd, buf, BUFFER_SIZE);
 		if (rd == -1)
 		{
-			ft_lstclear(t_char, free);
-			free(buff);
+			ft_lstclear_char(t_ch, free);
+			free(buf);
 			return ;
 		}
-		buff[rd] = '\0';
+		buf[rd] = '\0';
 	}
-	free(buff);
+	free(buf);
 }
 
 char	*get_next_line(int fd)
 {
-	char			*buffer;
-	char			*new_line;
-	t_list static	*t_char_node[1024];
-	ssize_t			r;
+	char				*buffer;
+	char				*new_line;
+	t_list_char static	*t_char_node[1024];
+	ssize_t				r;
 
 	if (fd < 0 || fd > 1024)
 		return (NULL);
@@ -112,7 +112,7 @@ char	*get_next_line(int fd)
 	r = read(fd, buffer, BUFFER_SIZE);
 	if (r == -1)
 	{
-		ft_lstclear(&t_char_node[fd], free);
+		ft_lstclear_char(&t_char_node[fd], free);
 		free (buffer);
 		return (NULL);
 	}

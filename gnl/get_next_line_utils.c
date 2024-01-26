@@ -6,17 +6,18 @@
 /*   By: tpaim-yu <tpaim-yu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 03:38:53 by tpaim-yu          #+#    #+#             */
-/*   Updated: 2024/01/10 19:34:14 by tpaim-yu         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:27:20 by tpaim-yu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/get_next_line.h"
+#include "../libft.h"
 
-t_list	*ft_lstnew(char content)
+t_list_char	*ft_lstnew_char(char content)
 {
-	t_list	*new_list;
+	t_list_char	*new_list;
 
-	new_list = malloc(sizeof(t_list));
+	new_list = malloc(sizeof(t_list_char));
 	if (!new_list)
 		return (NULL);
 	new_list->c = content;
@@ -24,9 +25,9 @@ t_list	*ft_lstnew(char content)
 	return (new_list);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back_char(t_list_char **lst, t_list_char *new)
 {
-	t_list	*temp;
+	t_list_char	*temp;
 
 	if (!lst || !new)
 		return ;
@@ -41,32 +42,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	temp->next = new;
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_lstclear_char(t_list_char **lst, void (*del)(void *))
 {
-	void	*ptr;
-	size_t	total_size;
-	size_t	i;
-
-	total_size = nmemb * size;
-	if (nmemb && total_size / nmemb != size)
-		return (NULL);
-	ptr = malloc(total_size);
-	if (ptr != NULL)
-	{
-		i = 0;
-		while (i < total_size)
-		{
-			((unsigned char *)ptr)[i] = 0;
-			i++;
-		}
-	}
-	return (ptr);
-}
-
-void	ft_lstclear(t_list **lst, void (*del)(void *))
-{
-	t_list	*temp;
-	t_list	*first;
+	t_list_char	*temp;
+	t_list_char	*first;
 
 	first = *lst;
 	if (!lst)
